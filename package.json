@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "build": "npm run less && webpack",
+    "postinstall": "npm run build",
     "watch": "webpack -w",
     "start": "npm run build && node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
@@ -13,15 +14,22 @@
   },
   "dependencies": {
     "babel-loader": "^7.1.1",
+    "babel-preset-airbnb": "^1.0.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.4.3",
     "bluebird": "^3.5.0",
     "chai": "^3.5.0",
     "express": "^4.15.3",
+    "file-loader": "^0.11.2",
     "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-plugin-autoprefix": "^1.5.1",
     "lodash": "^4.15.0",
     "lodash-webpack-plugin": "^0.10.2",
     "morgan": "^1.8.1",
     "nightmare": "^2.10.0",
     "react": "^15.6.1",
+    "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -29,7 +37,8 @@
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
     "serve-favicon": "^2.0.1",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "url-loader": "^0.5.9"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.6.1",
